@@ -1,0 +1,71 @@
+dep to vgo
+
+18 March 2018
+
+Eno Compton
+Developer Advocate, Google
+enocom@google.com
+@enocom_
+
+* What is dep?
+
+"dep is a prototype dependency management tool for Go."
+
+"dep is the _official_ experiment, but not yet the official tool."
+
+[[https://github.com/golang/dep][https://github.com/golang/dep]]
+
+* What is vgo?
+
+Russ Cox:
+
+This proposal keeps the best parts of go get, adds reproducible builds, adopts
+semantic versioning, eliminates vendoring, deprecates GOPATH in favor of a
+project-based workflow, and provides a smooth migration path from dep and its
+predecessors.
+
+[[https://research.swtch.com/vgo-intro][Go += Package Versioning]]
+
+* It's also in its early stages
+
+Russ Cox:
+
+That said, this proposal is still also in its early stages. If details are not right yet, we will take the time to fix them before the work lands in the main Go distribution.
+
+[[https://research.swtch.com/vgo-intro][Go += Package Versioning]]
+
+* What about dep?
+
+Sam Boyer:
+
+At the heart of our disagreement is whether the expressiveness reductions vgo
+must impose in order to make its core algorithm work will yield an environment
+that is bearable for Go developers.
+
+[[https://sdboyer.io/blog/vgo-and-dep][Thoughts on vgo and dep]]
+
+* Concerns about the process
+
+Sam Boyer:
+
+I also have process concerns. vgo, as currently conceived, is a near-complete
+departure from dep. It was created largely in isolation from the community’s
+work on dep, to the point where not only is there no shared code and at best
+moderate conceptual overlap, but a considerable amount of the insight and
+experience gleaned from dep as the “official experiment” is just discarded.
+
+[[https://sdboyer.io/blog/vgo-and-dep][Thoughts on vgo and dep]]
+
+* What's the future of dep?
+
+* Let's talk about vgo
+
+[[vgo][https://research.swtch.com/vgo-tour]]
+
+* Sample go.mod
+
+  module "my/thing"
+  require "other/thing" v1.0.2
+  require "new/thing" v2.3.4
+  exclude "old/thing" v1.2.3
+  replace "bad/thing" v1.4.5 => "good/thing" v1.4.5

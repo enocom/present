@@ -1,0 +1,69 @@
+Present
+How to use Go's presentation tool
+
+28 February 2018
+
+Eno Compton
+Developer Advocate, Google
+enocom@google.com
+@enocom_
+
+* Installation
+
+    $ go get golang.org/x/tools/present
+
+* Getting Started
+
+    $ cat > my-presentations.slide
+    Title of document
+    Subtitle of document
+    15:04 2 Jan 2006
+    Tags: foo, bar, baz
+
+    Author Name
+    Job title, Company
+    joe@example.com
+    http://url/
+    @twitter_name
+
+    * My first slide
+    (CTRL-D to write string to file)
+
+* Start the present tool
+
+    $ present
+
+* Show code!
+
+If we have a file called hello.go in the same directory, then this line in the
+slides:
+
+    .code hello.go
+
+* Turns into this:
+
+.code hello.go
+
+* Add other things
+
+Things like:
+
+    .code x.go /^func main/,/^}/
+    .play y.go
+    .image image.jpg
+    .background image.jpg
+    .iframe http://foo
+    .link http://foo label
+    .html file.html
+    .caption _Gopher_ by [[https://www.instagram.com/reneefrench/][Renée
+    French]]
+
+* Read the docs
+
+GoDoc:
+
+[[https://godoc.org/golang.org/x/tools/present]]
+
+This example:
+
+[[https://github.com/enocom/present]]

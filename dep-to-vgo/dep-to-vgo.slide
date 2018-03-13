@@ -11,9 +11,15 @@ enocom@google.com
 
 "dep is a prototype dependency management tool for Go."
 
-"dep is the _official_ experiment, but not yet the official tool."
+"dep is the official experiment, but not yet the official tool."
 
 [[https://github.com/golang/dep][https://github.com/golang/dep]]
+
+* February 20, 2018
+
+Russ Cox:
+
+"We need to add package versioning to Go."
 
 * What is vgo?
 
@@ -26,11 +32,17 @@ predecessors.
 
 [[https://research.swtch.com/vgo-intro][Go += Package Versioning]]
 
+* Seven part series
+
+[[https://research.swtch.com/vgo][Go & Versioning]]
+
 * It's also in its early stages
 
 Russ Cox:
 
-That said, this proposal is still also in its early stages. If details are not right yet, we will take the time to fix them before the work lands in the main Go distribution.
+That said, this proposal is still also in its early stages. If details are not
+right yet, we will take the time to fix them before the work lands in the main
+Go distribution.
 
 [[https://research.swtch.com/vgo-intro][Go += Package Versioning]]
 
@@ -62,10 +74,19 @@ experience gleaned from dep as the “official experiment” is just discarded.
 
 [[vgo][https://research.swtch.com/vgo-tour]]
 
+* Some changes
+
+- No more required GOPATH
+- Projects now require a go.mod file
+- Semantic versioning of dependencies
+- No more vendoring
+- Dependencies stored in ~/go/src/v
+- GOPROXY environment variable (URL and file OK)
+
 * Sample go.mod
 
   module "my/thing"
   require "other/thing" v1.0.2
   require "new/thing" v2.3.4
   exclude "old/thing" v1.2.3
-  replace "bad/thing" v1.4.5 => "good/thing" v1.4.5
+  replace "bad/thing" v1.4.5 => "../good/thing" v1.4.5

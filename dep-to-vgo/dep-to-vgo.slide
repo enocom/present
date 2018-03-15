@@ -72,16 +72,17 @@ experience gleaned from dep as the “official experiment” is just discarded.
 
 * Let's talk about vgo
 
-[[vgo][https://research.swtch.com/vgo-tour]]
-
-* Some changes
-
 - No more required GOPATH
 - Projects now require a go.mod file
 - Semantic versioning of dependencies
 - No more vendoring
 - Dependencies stored in ~/go/src/v
 - GOPROXY environment variable (URL and file OK)
+
+* Start Here
+
+[[A Tour of Versioned Go][https://research.swtch.com/vgo-tour]]
+[[Defining Go Modules][https://research.swtch.com/vgo-module]]
 
 * Sample go.mod
 

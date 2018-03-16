@@ -21,6 +21,8 @@ Russ Cox:
 
 "We need to add package versioning to Go."
 
+* vgo == versioned go
+
 * What is vgo?
 
 Russ Cox:
@@ -81,13 +83,19 @@ experience gleaned from dep as the “official experiment” is just discarded.
 
 * Start Here
 
-[[A Tour of Versioned Go][https://research.swtch.com/vgo-tour]]
-[[Defining Go Modules][https://research.swtch.com/vgo-module]]
+- [[https://research.swtch.com/vgo-tour][A Tour of Versioned Go]]
+- [[https://research.swtch.com/vgo-module][Defining Go Modules]]
+
+    go get -u golang.org/x/vgo
 
 * Sample go.mod
 
   module "my/thing"
-  require "other/thing" v1.0.2
-  require "new/thing" v2.3.4
+
+  require "foo" v1.0.2
+
+  require "bar" v0.0.0-20180312154400-d284fd84214e
+
   exclude "old/thing" v1.2.3
-  replace "bad/thing" v1.4.5 => "../good/thing" v1.4.5
+
+  replace "bad/thing" v1.4.5 => "../good/thing"

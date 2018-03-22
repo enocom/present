@@ -1,11 +1,15 @@
 dep to vgo
 
-18 March 2018
+22 March 2018
 
 Eno Compton
 Developer Advocate, Google
 enocom@google.com
 @enocom_
+
+* The biggest problem with Go
+
+Go does not have an official dependency management tool.
 
 * What is dep?
 
@@ -17,9 +21,27 @@ enocom@google.com
 
 * February 20, 2018
 
-Russ Cox:
+Russ Cox, tech lead of the Go team:
 
 "We need to add package versioning to Go."
+
+* Seven part series
+
+- Go += Package Versioning
+
+- A Tour of Versioned Go (vgo)
+
+- Semantic Import Versioning
+
+- Minimal Version Selection
+
+- Reproducible, Verifiable, Verified Builds
+
+- Defining Go Modules
+
+- Versioned Go Commands
+
+[[https://research.swtch.com/vgo][Go & Versioning]]
 
 * vgo == versioned go
 
@@ -34,19 +56,14 @@ predecessors.
 
 [[https://research.swtch.com/vgo-intro][Go += Package Versioning]]
 
-* Seven part series
+* Note
 
-[[https://research.swtch.com/vgo][Go & Versioning]]
+- vgo is just a temporary name
+- eventually its functionality will merge into go
 
-* It's also in its early stages
+* Now a official Go proposal
 
-Russ Cox:
-
-That said, this proposal is still also in its early stages. If details are not
-right yet, we will take the time to fix them before the work lands in the main
-Go distribution.
-
-[[https://research.swtch.com/vgo-intro][Go += Package Versioning]]
+[[https://golang.org/issue/24301][https://golang.org/issue/24301]]
 
 * What about dep?
 
@@ -58,44 +75,82 @@ that is bearable for Go developers.
 
 [[https://sdboyer.io/blog/vgo-and-dep][Thoughts on vgo and dep]]
 
-* Concerns about the process
+* Some concerns
 
 Sam Boyer:
 
-I also have process concerns. vgo, as currently conceived, is a near-complete
-departure from dep. It was created largely in isolation from the community’s
-work on dep, to the point where not only is there no shared code and at best
-moderate conceptual overlap, but a considerable amount of the insight and
-experience gleaned from dep as the “official experiment” is just discarded.
+vgo, as currently conceived, is a near-complete departure from dep. It was
+created largely in isolation from the community’s work on dep, to the point
+where not only is there no shared code and at best moderate conceptual overlap,
+but a considerable amount of the insight and experience gleaned from dep as the
+“official experiment” is just discarded.
 
 [[https://sdboyer.io/blog/vgo-and-dep][Thoughts on vgo and dep]]
+
+* JBD (aka rakyll) on dependency management
+
+.image jbd-on-vgo.png
 
 * What's the future of dep?
 
 * Let's talk about vgo
 
 - No more required GOPATH
-- Projects now require a go.mod file
+- Projects now require a go.mod file (but no lock file)
 - Semantic versioning of dependencies
 - No more vendoring
-- Dependencies stored in ~/go/src/v
-- GOPROXY environment variable (URL and file OK)
-
-* Start Here
-
-- [[https://research.swtch.com/vgo-tour][A Tour of Versioned Go]]
-- [[https://research.swtch.com/vgo-module][Defining Go Modules]]
-
-    go get -u golang.org/x/vgo
+- Project-based workflow
 
 * Sample go.mod
 
   module "my/thing"
 
   require "foo" v1.0.2
-
   require "bar" v0.0.0-20180312154400-d284fd84214e
-
   exclude "old/thing" v1.2.3
-
   replace "bad/thing" v1.4.5 => "../good/thing"
+
+* Project structure
+
+One binary structure:
+
+    go.mod
+    main.go
+    foo/foo.go
+    bar/bar.go
+
+Library:
+
+    go.mod
+    lib.go
+
+Multi-binary structure:
+
+    cmd/cli/go.mod
+    cmd/cli/main.go
+    cmd/web/go.mod
+    cmd/web/main.go
+    foo/go.mod
+    foo/foo.go
+
+* The plan for Go modules
+
+- 1.11: preliminary support
+- 1.12: official support
+- Later release: remove old, unversioned go get
+
+* Trying out vgo
+
+Russ Cox:
+
+Even so, I'm sure there are details that are wrong. I hope our users will help
+us get this design right by trying the new vgo prototype and engaging in
+productive discussions.
+
+[[https://research.swtch.com/vgo-intro][vgo-intro]]
+
+* Dave Chaney: go.mod should have a different name
+
+[[https://github.com/golang/go/issues/23972][https://github.com/golang/go/issues/23972]]
+
+* Let's try it

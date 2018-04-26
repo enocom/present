@@ -7,7 +7,14 @@ Developer Advocate, Google
 enocom@google.com
 @enocom_
 
-* Welcome
+* The Go Programming Language
+
+.image logo.png
+
+Go is an open source programming langauge that enables the production of simple,
+efficient, and reliable software at scale.
+
+* And Go is fun.
 
 .image gophers.png
 

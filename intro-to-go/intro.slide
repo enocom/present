@@ -1,0 +1,70 @@
+An Introduction to Go
+
+26 April 2018
+
+Eno Compton
+Developer Advocate, Google
+enocom@google.com
+@enocom_
+
+* Welcome
+
+.image gophers.png
+
+* The Plan
+
+1. Install Go and Visual Studio Code
+
+2. Setup for Development
+
+3. Hello, World!
+
+4. Write a Command Line Guessing Game
+
+5. Covert the Game to a Web API
+
+6. Links to good resources
+
+* Install Go and Visual Studio Code
+
+.link https://golang.org
+.link https://code.visualstudio.com
+
+* Setup for Development
+
+1. Add Go bin to PATH
+
+    # Inside ~/.bash_profile
+    export PATH=~/go/bin:$PATH
+
+3. Create a directory for your code
+
+    # For example:
+    mkdir -p ~/go/src/github.com/enocom
+
+3. Install Go plugin for Visual Studio Code
+
+* Hello, World!
+
+    // The contents of:
+    // ~/go/src/github.com/enocom/hello/main.go
+    //
+    package main
+
+    import "fmt"
+
+    func main() {
+            fmt.Println("Hello, 世界")
+    }
+
+* Write a Command Line Guessing Game
+
+* Convert the Game to a Web API
+
+* Links to good resources
+
+.link https://dave.cheney.net/resources-for-new-go-programmers
+
+.link https://github.com/enocom/gopher-reading-list
+
+.link https://github.com/enocom/presentations/tree/master/intro-to-go

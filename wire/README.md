@@ -10,8 +10,10 @@ enocom@google.com
 
 Links:
 
+- [Wire README][readme]
 - [Wire Tutorial][tutorial]
 - [Compile-time Dependency Injection With Go Cloud's Wire][blog]
 
 [blog]: https://blog.golang.org/wire
+[readme]: https://github.com/google/go-cloud/tree/master/wire
 [tutorial]: https://github.com/google/go-cloud/tree/master/samples/wire

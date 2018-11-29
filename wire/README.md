@@ -1,12 +1,10 @@
 # README
 
-Title:
-
 An Introduction to Compile-time Dependency Injection with Wire, or:
-    Learn to Use Wire By Example
 
-Eno Compton
-enocom@google.com
+Learn to Use Wire By Example
+
+[Eno Compton](mailto:enocom@google.com)
 
 Links:
 
@@ -15,5 +13,5 @@ Links:
 - [Compile-time Dependency Injection With Go Cloud's Wire][blog]
 
 [blog]: https://blog.golang.org/wire
-[readme]: https://github.com/google/go-cloud/tree/master/wire
+[readme]: https://github.com/google/wire/blob/master/README.md
 [tutorial]: https://github.com/google/go-cloud/tree/master/samples/wire

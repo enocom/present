@@ -16,7 +16,7 @@
 
 package main
 
-import "github.com/google/go-cloud/wire"
+import "github.com/google/wire"
 
 func initializeEvent(msg string) event {
 	wire.Build(newEvent, newGreeter, newMessage)

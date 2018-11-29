@@ -17,7 +17,7 @@ package main
 import "fmt"
 
 func main() {
-	e := initializeEvent("Welcome to Boulder Gophers")
+	e := initializeEvent("Welcome to Go Silicon Valley")
 
 	e.start()
 }

@@ -1,3 +1,3 @@
-module github.com/enocom/present/v2
+module github.com/enocom/present
 
 go 1.19
